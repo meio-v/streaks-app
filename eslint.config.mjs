@@ -1,8 +1,8 @@
 // eslint.config.js
-import tsParser from '@typescript-eslint/parser';
-import prettierPlugin from 'eslint-plugin-prettier';
-import prettierConfig from 'eslint-config-prettier';
-import nextPlugin from '@next/eslint-plugin-next';
+import tsParser from '@typescript-eslint/parser'
+import prettierPlugin from 'eslint-plugin-prettier'
+import prettierConfig from 'eslint-config-prettier'
+import nextPlugin from '@next/eslint-plugin-next'
 
 export default [
   {
@@ -26,4 +26,4 @@ export default [
     },
   },
   prettierConfig, // Prettier rules override
-];
+]
