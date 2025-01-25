@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import Image from 'next/image'
 
 interface StreakIcon {
   icon: string | null
@@ -18,7 +19,7 @@ export default function StreakIcons({ streakIcons }: StreakIconsProps) {
     return () => clearTimeout(timeoutId)
   }, [streakIcons])
 
-  const placeholders = Array.from({ length: 7 }, (_, idx) => ({
+  const placeholders = Array.from({ length: 7 }, () => ({
     icon: null,
     isActive: false,
   }))
@@ -34,10 +35,7 @@ export default function StreakIcons({ streakIcons }: StreakIconsProps) {
           <div
             className={`h-10 w-10 rounded-full p-1 ${iconObj.isActive ? 'bg-indigo-500' : 'bg-gray-300'}`}
           >
-            <img
-              src={iconObj.icon ?? ''}
-              alt="streak-icon"
-            />
+            <Image src={iconObj.icon ?? ''} alt="streak-icon" />
           </div>
         </div>
       ))}

@@ -20,11 +20,8 @@ export default function CasePage({
   const [rawActivities, setRawActivities] = useState<UserActivity[] | null>(
     null,
   )
-  const [loading, setLoading] = useState(false)
-
 
   const fetchAndSetData = async (caseType: string) => {
-    setLoading(true) // Show loading spinner
     try {
       const response = await fetchStreakData(caseType)
       setTotalStreak(response.total)
@@ -32,14 +29,12 @@ export default function CasePage({
     } catch (error) {
       console.error('Error fetching data:', error)
     }
-    setLoading(false)
   }
 
   const handleCaseChange = async (newCase: string) => {
     await fetchAndSetData(newCase)
     router.push(`/streaks/${newCase}`)
   }
-
 
   useEffect(() => {
     params.then((resolvedParams) => {
@@ -55,7 +50,6 @@ export default function CasePage({
     })
   }, [params])
 
-
   const streakIcons = rawActivities
     ? mapActivitiesToWeekdays(rawActivities)
     : null
@@ -68,11 +62,7 @@ export default function CasePage({
     <div className="bg-gradient-to-b from-yellow-100 to-white min-h-screen relative">
       <Header />
       <div className="absolute inset-0 top-[4rem] flex flex-col justify-center items-center">
-        <Hero
-          streakIcons={streakIcons}
-          totalStreak={totalStreak}
-          isLoading={loading}
-        />
+        <Hero streakIcons={streakIcons} totalStreak={totalStreak} />
         <CaseSelector currentCase={caseType} onSelect={handleCaseChange} />
       </div>
     </div>

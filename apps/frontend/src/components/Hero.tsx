@@ -4,19 +4,14 @@ import StreakIcons from './StreakIcons'
 interface HeroProps {
   streakIcons: { icon: string | null; isActive: boolean }[] | null
   totalStreak: number
-  isLoading: boolean
 }
 
-export default function Hero({
-  streakIcons,
-  totalStreak,
-  isLoading,
-}: HeroProps) {
+export default function Hero({ streakIcons, totalStreak }: HeroProps) {
   const [isStreakVisible, setIsStreakVisible] = useState(false)
 
   useEffect(() => {
-    setIsStreakVisible(false) // Fade out totalStreak
-    const timeoutId = setTimeout(() => setIsStreakVisible(true), 500) // Fade back in after delay
+    setIsStreakVisible(false)
+    const timeoutId = setTimeout(() => setIsStreakVisible(true), 500)
     return () => clearTimeout(timeoutId)
   }, [totalStreak])
 
