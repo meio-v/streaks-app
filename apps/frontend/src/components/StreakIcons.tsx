@@ -37,9 +37,6 @@ export default function StreakIcons({ streakIcons }: StreakIconsProps) {
             <img
               src={iconObj.icon ?? ''}
               alt="streak-icon"
-              className={`h-full w-full filter ${
-                iconObj.isActive ? 'brightness-200' : 'grayscale'
-              }`}
             />
           </div>
         </div>

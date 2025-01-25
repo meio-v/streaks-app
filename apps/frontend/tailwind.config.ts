@@ -15,5 +15,5 @@ export default {
       filter: {},
     },
   },
-  plugins: [require('@tailwindcss/typography')],
+  plugins: [],
 } satisfies Config
