@@ -1,4 +1,4 @@
-# Streak Tracker App
+# Streaks App
 
 This is a **Streak Tracker** application built using [Next.js](https://nextjs.org) and [NestJS](https://nestjs.com). The app helps users visualize their activity streaks with a clean and responsive UI. It includes a backend service to calculate streaks based on user activity data, which is integrated with a front-end dashboard for a seamless user experience.
 
@@ -24,7 +24,7 @@ Follow these steps to run the development environment:
 1. Clone the repository:
    ```bash
    git clone <repository-url>
-   cd streak-tracker
+   cd streaks-app
    ```
 
 2. Install dependencies:
